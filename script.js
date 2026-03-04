@@ -199,3 +199,63 @@
   }
 })();
 
+// FAQ accordion (single-open)
+(function () {
+  const root = document.querySelector('[data-accordion]');
+  if (!root) return;
+
+  const items = Array.from(root.querySelectorAll('.faq-item'));
+  const closeItem = (item) => {
+    const q = item.querySelector('.faq-q');
+    const a = item.querySelector('.faq-a');
+    if (!q || !a) return;
+    q.setAttribute('aria-expanded', 'false');
+    a.hidden = true;
+  };
+
+  const openItem = (item) => {
+    const q = item.querySelector('.faq-q');
+    const a = item.querySelector('.faq-a');
+    if (!q || !a) return;
+    q.setAttribute('aria-expanded', 'true');
+    a.hidden = false;
+  };
+
+  items.forEach((item) => {
+    const q = item.querySelector('.faq-q');
+    const a = item.querySelector('.faq-a');
+    if (!q || !a) return;
+
+    // Ensure initial state matches markup
+    const expanded = q.getAttribute('aria-expanded') === 'true';
+    a.hidden = !expanded;
+
+    q.addEventListener('click', () => {
+      const isExpanded = q.getAttribute('aria-expanded') === 'true';
+      items.forEach(closeItem);
+      if (!isExpanded) openItem(item);
+    });
+  });
+})();
+
+// Quote form (prevent navigation / console errors)
+(function () {
+  const form = document.querySelector('[data-quote-form]');
+  if (!form) return;
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    form.reset();
+    // Lightweight success feedback without alerts/modals
+    const btn = form.querySelector('button[type="submit"]');
+    if (!btn) return;
+    const prev = btn.textContent;
+    btn.textContent = 'Submitted';
+    btn.disabled = true;
+    window.setTimeout(() => {
+      btn.textContent = prev;
+      btn.disabled = false;
+    }, 1400);
+  });
+})();
+
