@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gushwork Assignment — Product Page</title>
+    <meta
+      name="description"
+      content="Responsive web page implementation for the Gushwork front-end assignment."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Sticky header bar that appears after first fold (must sit above nav) -->
+    <header class="sticky-header" aria-label="Sticky header bar">
+      <div class="container sticky-header__inner">
+        <div class="brand">
+          <div class="brand__mark" aria-hidden="true">M</div>
+          <div class="brand__text">
+            <div class="brand__name">Mangalam</div>
+            <div class="brand__sub">HDPE PIPES</div>
+          </div>
+        </div>
+        <div class="sticky-header__spacer" aria-hidden="true"></div>
+        <a class="btn btn--primary btn--sm" href="#contact">Contact Us</a>
+      </div>
+    </header>
+
+    <!-- Main header / navigation (stays sticky) -->
+    <header class="page-header" aria-label="Main navigation">
+      <div class="container page-header__inner">
+        <div class="brand">
+          <div class="brand__mark" aria-hidden="true">M</div>
+          <div class="brand__text">
+            <div class="brand__name">Mangalam</div>
+            <div class="brand__sub">HDPE PIPES</div>
+          </div>
+        </div>
+
+        <nav class="page-header__nav" aria-label="Primary navigation">
+          <a href="#about" class="nav-link">About Us</a>
+          <div class="nav-dropdown">
+            <button class="nav-link nav-dropdown__trigger" type="button" aria-haspopup="true" aria-expanded="false">
+              Products <span class="chev" aria-hidden="true">▾</span>
+            </button>
+            <div class="nav-dropdown__menu" role="menu" aria-label="Products">
+              <a class="nav-dropdown__item" role="menuitem" href="#product">Two For One Twister</a>
+              <a class="nav-dropdown__item" role="menuitem" href="#gallery">Gallery</a>
+            </div>
+          </div>
+          <a class="btn btn--primary btn--pill" href="#contact">Contact Us</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Breadcrumb + hero fold -->
+      <section id="product" class="fold fold--hero" aria-labelledby="hero-title">
+        <div class="container">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="#product" class="breadcrumb__link">Products</a>
+            <span class="breadcrumb__sep" aria-hidden="true">›</span>
+            <span class="breadcrumb__current" aria-current="page">Two For One Twister</span>
+          </nav>
+
+          <div class="hero">
+            <!-- Left: Image carousel -->
+            <div class="hero__media" aria-label="Product images">
+              <div class="hero-carousel" aria-roledescription="carousel">
+                <button
+                  class="hero-carousel__nav hero-carousel__nav--prev"
+                  type="button"
+                  aria-label="Previous image"
+                  data-hero-prev
+                >
+                  ‹
+                </button>
+                <button
+                  class="hero-carousel__nav hero-carousel__nav--next"
+                  type="button"
+                  aria-label="Next image"
+                  data-hero-next
+                >
+                  ›
+                </button>
+                <figure class="hero-carousel__frame">
+                  <img
+                    class="hero-carousel__img"
+                    src="https://images.pexels.com/photos/257700/pexels-photo-257700.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                    alt="Product installation worksite"
+                  />
+                </figure>
+              </div>
+              <div class="hero-thumbs" aria-label="Product image thumbnails">
+                <button class="hero-thumb hero-thumb--active" type="button" data-hero-index="0" aria-label="Show image 1">
+                  <img
+                    src="https://images.pexels.com/photos/257700/pexels-photo-257700.jpeg?auto=compress&cs=tinysrgb&w=300"
+                    alt=""
+                    loading="lazy"
+                  />
+                </button>
+                <button class="hero-thumb" type="button" data-hero-index="1" aria-label="Show image 2">
+                  <img
+                    src="https://images.pexels.com/photos/159306/construction-site-build-construction-work-159306.jpeg?auto=compress&cs=tinysrgb&w=300"
+                    alt=""
+                    loading="lazy"
+                  />
+                </button>
+                <button class="hero-thumb" type="button" data-hero-index="2" aria-label="Show image 3">
+                  <img
+                    src="https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=300"
+                    alt=""
+                    loading="lazy"
+                  />
+                </button>
+                <button class="hero-thumb" type="button" data-hero-index="3" aria-label="Show image 4">
+                  <img
+                    src="https://images.pexels.com/photos/442150/pexels-photo-442150.jpeg?auto=compress&cs=tinysrgb&w=300"
+                    alt=""
+                    loading="lazy"
+                  />
+                </button>
+              </div>
+            </div>
+
+            <!-- Right: Badges + title + bullets -->
+            <div class="hero__content">
+              <div class="certs" aria-label="Certifications">
+                <div class="cert">
+                  <span class="cert__icon" aria-hidden="true">⛰</span>
+                  <span class="cert__label">BIS Certified</span>
+                </div>
+                <div class="cert">
+                  <span class="cert__icon" aria-hidden="true">⎈</span>
+                  <span class="cert__label">ISO Certified</span>
+                </div>
+                <div class="cert">
+                  <span class="cert__icon" aria-hidden="true">CE</span>
+                  <span class="cert__label">CE Certified</span>
+                </div>
+              </div>
+
+              <h1 id="hero-title" class="hero__title">
+                Premium HDPE Pipes<br />
+                &amp; Coils for Modern<br />
+                Infrastructure
+              </h1>
+
+              <ul class="hero__bullets" aria-label="Key features">
+                <li>Leak-Proof Fusion Joints</li>
+                <li>Chemical Resistance</li>
+                <li>50+ Year Service Life</li>
+                <li>Flexible Installation</li>
+                <li>Flexible Installation</li>
+              </ul>
+
+              <div class="price-card" aria-label="Price information">
+                <div class="price-card__label">Price Range</div>
+                <div class="price-card__value">₹4,80,000 - 7,90,000</div>
+                <div class="price-card__chips" aria-label="Shipping and returns">
+                  <span class="chip chip--muted">Shipping: 6-12 days</span>
+                  <span class="chip chip--warn">Returns: If returned within 7 days</span>
+                </div>
+                <div class="price-card__meta">
+                  Certifications: ISO Certified, BIS Certified
+                </div>
+              </div>
+
+              <a class="specs-btn" href="#details">
+                View Technical Specs <span class="specs-btn__chev" aria-hidden="true">›</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Image carousel with hover zoom -->
+      <section
+        id="gallery"
+        class="carousel-section"
+        aria-labelledby="carousel-title"
+      >
+        <div class="section-header">
+          <h2 id="carousel-title">Interactive Image Carousel</h2>
+          <p class="section-subtitle">
+            Hover over any image to see a zoomed-in preview. Use the controls
+            to browse through the gallery.
+          </p>
+        </div>
+
+        <div class="carousel" aria-roledescription="carousel">
+          <div class="carousel__main">
+            <figure class="carousel__frame">
+              <img
+                class="carousel__image"
+                src="https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                alt="Modern workspace with laptop and notes"
+              />
+              <div class="zoom-lens" aria-hidden="true"></div>
+            </figure>
+
+            <!-- Zoom preview panel -->
+            <div
+              class="carousel__zoom"
+              aria-hidden="true"
+              role="presentation"
+            ></div>
+          </div>
+
+          <div class="carousel__controls">
+            <button
+              class="carousel__btn"
+              type="button"
+              aria-label="Previous image"
+              data-carousel-prev
+            >
+              ‹
+            </button>
+            <div class="carousel__thumbnails" aria-label="Image thumbnails">
+              <button
+                class="thumb thumb--active"
+                type="button"
+                data-carousel-index="0"
+              >
+                <img
+                  src="https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=400"
+                  alt="Modern workspace with laptop and notes"
+                  loading="lazy"
+                />
+              </button>
+              <button
+                class="thumb"
+                type="button"
+                data-carousel-index="1"
+              >
+                <img
+                  src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=400"
+                  alt="Team huddle around work table"
+                  loading="lazy"
+                />
+              </button>
+              <button
+                class="thumb"
+                type="button"
+                data-carousel-index="2"
+              >
+                <img
+                  src="https://images.pexels.com/photos/1181547/pexels-photo-1181547.jpeg?auto=compress&cs=tinysrgb&w=400"
+                  alt="Designer working with color palette and laptop"
+                  loading="lazy"
+                />
+              </button>
+              <button
+                class="thumb"
+                type="button"
+                data-carousel-index="3"
+              >
+                <img
+                  src="https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=400"
+                  alt="Tablet displaying analytics dashboard"
+                  loading="lazy"
+                />
+              </button>
+            </div>
+            <button
+              class="carousel__btn"
+              type="button"
+              aria-label="Next image"
+              data-carousel-next
+            >
+              ›
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="fold fold--about" aria-labelledby="about-title">
+        <div class="container">
+          <div class="section-header section-header--left">
+            <h2 id="about-title">About</h2>
+            <p class="section-subtitle">
+              This page is implemented with vanilla HTML/CSS/JS and follows the assignment requirements: sticky header above nav, responsive layout with max width, and carousel with hover zoom.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="contact" class="page-footer">
+      <div class="container page-footer__inner">
+        <p>© <span id="year"></span> Mangalam HDPE Pipes. All rights reserved.</p>
+        <a class="page-footer__link" href="#product">Back to top</a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
